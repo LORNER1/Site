@@ -46,19 +46,50 @@ distributed VCS for the kernel</li>
 Git and Mercurial are distributed version control systems (DVCS)</li>
             </ul>
             </ul>
-            <li></li>
-            <li></li>
 
             <h3>Centralized vs. Distributed Version Control</h3>
-            <p>Text</p>
+            <b>Version control systems can be centralized or distributed. Understanding this distinction is key to
+comparing tools and workflows:
+</b>
             <ul>
-                <li></li>
+            <li><b>Centralized Version Control (CVCS)</b>: A single central repository on a server holds the “official”
+copy of the code. Developers commit changes to this server and update (pull) changes from it.
+Tools like RCS, CVS, and Subversion are centralized. In a CVCS, collaboration requires network
+access to the server – if the server is down, nobody can commit changes. This model provides a
+single source of truth and is straightforward to understand: everyone works on the same central
+codebase .</li>
+            <li><b>Centralized VCS Example:</b>The figure below illustrates a simple centralized VCS setup, with developers
+interacting with a single shared repository</li>
+            <li><b>Distributed Version Control (DVCS):</b>In distributed systems like Git or Mercurial, every developer
+has their own full copy of the repository, including the entire history . There is no inherent
+single master server – every clone can serve as a remote for others. Developers can commit
+changes locally to their own repository (even offline), and later push those changes to share with
+others or pull updates from peers</li>
+            <li><b>In summary:</b>Centralized systems are simple and good for a single source of truth, but suffer from
+single-point failures and require connectivity for most operations.</li>
             </ul>
 
             <h3>Comparing Major VCS Tools and Their Use Cases</h3>
-            <p>Text</p>
+            <b>Over time, various VCS tools have been created, each suited to certain use cases and project sizes.
+Here’s a comparison of some historically significant systems:</b>
             <ul>
-                <li></li>
+                <li><b>RCS (Revision Control System):</b> Type: Local (centralized for single files). Use case: Individual
+developers or small projects needing versioning on single files. RCS works on one file at a time
+(no multi-file atomic commits).</li>
+                <li><b>CVS (Concurrent Versions System):</b>Type: Centralized client-server. Use case: Small-to-medium
+team projects (up to the 2000s) that need basic collaboration. CVS was popular in open source
+(e.g. early Linux, GNOME, etc.) and introduced the idea of concurrent editing (multiple
+developers working on the code simultaneously).</li>
+                <li><b>Subversion (SVN):</b> Type: Centralized. Use case: Projects needing a more robust central VCS than
+CVS. SVN improved reliability – commits are atomic (all files commit or none) and branching/
+merging is better supported than in CVS.</li>
+                <li><b>Git:</b>: Type: Distributed. Use case: Almost any scale – from individual projects to the largest opensource endeavors. Git is extremely fast at branching and merging, making it ideal for projects
+where developers create many experimental branches or work in parallel.</li>
+                <li><b>Mercurial:</b>Type: Distributed. Use case: Similar to Git in scope – Mercurial was designed for
+performance and ease of use with a DVCS model.</li>
+                <li><b>Other tools:</b>Perforce (Helix) is a fast centralized VCS often used in game development and large
+binary asset repositories (it handles huge files well and has fine-grained locking capabilities –
+useful for cases where merging binaries is impossible).</li>
             </ul>
         </section>
     </main>
